@@ -16,11 +16,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set image name
-        id: meta
-        run: |
-          echo "IMAGE=ghcr.io/${{ github.repository_owner }}/connect-cherish" >> $GITHUB_OUTPUT
-
       - name: Login to GHCR
         uses: docker/login-action@v3
         with:
@@ -28,14 +23,15 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push
+      - name: Build and push image
         uses: docker/build-push-action@v6
         with:
           context: .
           push: true
+          # GHCR requires lowercase image names, so we hardcode your lowercase username:
           tags: |
-            ${{ steps.meta.outputs.IMAGE }}:devops
-            ${{ steps.meta.outputs.IMAGE }}:${{ github.sha }}
+            ghcr.io/hizrabnu/connect-cherish:devops
+            ghcr.io/hizrabnu/connect-cherish:${{ github.sha }}
           build-args: |
             VITE_SUPABASE_URL=${{ secrets.VITE_SUPABASE_URL }}
             VITE_SUPABASE_PUBLISHABLE_KEY=${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
