@@ -16,7 +16,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
-
+// Main application entry point
 const App = () => {
   const [showSplash, setShowSplash] = useState(true);
 
