@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: connect-cherish
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: connect-cherish
+  template:
+    metadata:
+      labels:
+        app: connect-cherish
+    spec:
+      containers:
+        - name: connect-cherish
+          image: ghcr.io/hizrabnu/connect-cherish:devops
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
