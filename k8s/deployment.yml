@@ -18,3 +18,8 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 80
+
+# Kubernetes Deployment for connect-cherish app
+# This deploys the Docker image from GHCR
+apiVersion: apps/v1
+kind: Deployment
