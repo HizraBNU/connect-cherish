@@ -71,6 +71,9 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Project Overview
 
+Connect-Cherish is a web application enhanced with a complete DevOps pipeline.
+The project demonstrates containerization, CI/CD automation, and Kubernetes-based deployment.
 
 *lost and found app*
