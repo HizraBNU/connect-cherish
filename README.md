@@ -76,4 +76,14 @@ Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/c
 Connect-Cherish is a web application enhanced with a complete DevOps pipeline.
 The project demonstrates containerization, CI/CD automation, and Kubernetes-based deployment.
 
+
 *lost and found app*
+
+## CI/CD Pipeline
+
+- Continuous Integration runs on every push to the `devops` branch.
+- Continuous Delivery builds and pushes Docker images to GHCR.
+- Pipelines ensure only valid builds are deployed.
+
+*lost and found app*
+
